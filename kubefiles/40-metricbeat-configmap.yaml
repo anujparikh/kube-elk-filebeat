@@ -13,6 +13,9 @@ data:
       # Reload module configs as they change:
       reload.enabled: false
     setup.dashboards.enabled: true
+    setup.dashboards.index: "metricbeat-*"
+    setup.template.name: "metricbeat"
+    setup.template.pattern: "metricbeat-*"
     output.elasticsearch:
       hosts: ['${ELASTICSEARCH_HOST:elasticsearch}:${ELASTICSEARCH_PORT:9200}']
       index: "metricbeat-%{[beat.version]}-%{+MM.dd}"
